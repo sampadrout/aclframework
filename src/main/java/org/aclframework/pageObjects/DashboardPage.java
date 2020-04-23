@@ -2,7 +2,7 @@ package org.aclframework.pageObjects;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.pagefactory.iOSFindBy;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.aclframework.helpers.Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,16 +14,14 @@ import static org.aclframework.logger.LoggingManager.logMessage;
 public class DashboardPage extends Page {
 
     @FindBy(xpath = "//div[contains(@class, 'mx-dataview-content')]/div/div/h5[contains(text(), 'Logged into: Agent')]")
-    @AndroidFindBy(tagName = "Sign out")
-    @iOSFindBy()
+    @AndroidFindBy(xpath = "Sign out")
+    @iOSXCUITFindBy()
     private WebElement eleAgentLoginText;
 
     @FindBy(xpath = "//span[contains(text(), 'Wrong username or password.')]")
-    @AndroidFindBy(tagName = "Your ID or Password didn't match. Please try again.")
-    @iOSFindBy()
+    @AndroidFindBy(xpath = "Your ID or Password didn't match. Please try again.")
+    @iOSXCUITFindBy()
     private WebElement loginErrorMessage;
-
-
 
     WebDriver driver;
 

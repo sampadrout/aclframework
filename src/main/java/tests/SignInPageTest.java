@@ -19,7 +19,7 @@ public class SignInPageTest extends BaseTest {
         DashboardPage dashboardPage = new DashboardPage(driver);
 
 //        homePage.chooseSignInOption();
-        signInPage.signIn("srout", "Zz123456!");
+        signInPage.signIn("testr@cchs.com", "Abc123!@#");
         softAssert.assertTrue(dashboardPage.verifyDashboardPageDisplayed(), "Signin failed. Dashboard page not displayed.");
         softAssert.assertAll();
     }
@@ -31,7 +31,7 @@ public class SignInPageTest extends BaseTest {
         DashboardPage dashboardPage = new DashboardPage(driver);
 
 //        homePage.chooseSignInOption();
-        signInPage.signIn("srout", "1234");
+        signInPage.signIn("testr@cchs.com", "Zz123456!");
         softAssert.assertTrue(dashboardPage.verifyloginErrorMessage(), "Invalid signin attempt failed to display the error message");
         softAssert.assertAll();
     }

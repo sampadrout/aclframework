@@ -2,7 +2,7 @@ package org.aclframework.pageObjects;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.pagefactory.iOSFindBy;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.aclframework.helpers.Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,23 +14,23 @@ import static org.aclframework.logger.LoggingManager.logMessage;
 public class SignInPage extends Page {
 
     @FindBy(xpath = "//div[contains(text(), 'Cinch Home Services - Agent')]")
-    @AndroidFindBy(tagName = "Cinch Service Pro")
-    @iOSFindBy()
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Cinch Service Pro']")
+    @iOSXCUITFindBy()
     private WebElement eleSignInTitle;
 
     @FindBy(xpath = "//input[@placeholder='username/email']")
-    @AndroidFindBy(tagName = "Username")
-    @iOSFindBy()
+    @AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Username']")
+    @iOSXCUITFindBy()
     private WebElement eleUserName;
 
     @FindBy(xpath = "//input[@placeholder='your password']")
-    @AndroidFindBy(tagName = "Password")
-    @iOSFindBy()
+    @AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Password']")
+    @iOSXCUITFindBy()
     private WebElement elePassword;
 
     @FindBy(xpath = "//span[@class='auth0-label-submit']")
-    @AndroidFindBy(tagName = "Login")
-    @iOSFindBy()
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Login']")
+    @iOSXCUITFindBy()
     private WebElement eleLogInBtn;
 
     WebDriver driver;

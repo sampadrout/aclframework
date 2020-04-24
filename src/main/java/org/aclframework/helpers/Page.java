@@ -1,26 +1,26 @@
 package org.aclframework.helpers;
 
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import io.appium.java_client.MobileElement;
 
 public class Page {
 
     WebDriver driver;
 
-    public void clickElement(MobileElement element) {
+    public void clickElement(WebElement element) {
         element.click();
     }
 
-    public String getText(MobileElement element) {
+    public String getText(WebElement element) {
         return element.getText();
     }
 
-    public void enterText(MobileElement element, String value) {
+    public void enterText(WebElement element, String value) {
         element.sendKeys(value);
     }
 
-    public boolean checkElement(MobileElement element) {
+    public boolean checkElement(WebElement element) {
         return element.isDisplayed();
     }
 

@@ -6,7 +6,6 @@ import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.aclframework.helpers.Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import io.appium.java_client.MobileElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -17,22 +16,22 @@ public class SignInPage extends Page {
     @FindBy(xpath = "//div[contains(text(), 'Cinch Home Services - Agent')]")
     @AndroidFindBy(xpath = "//android.widget.TextView[@text='Cinch Service Pro']")
     @iOSXCUITFindBy()
-    private MobileElement eleSignInTitle;
+    private WebElement eleSignInTitle;
 
     @FindBy(xpath = "//input[@placeholder='username/email']")
     @AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Username']")
     @iOSXCUITFindBy()
-    private MobileElement eleUserName;
+    private WebElement eleUserName;
 
     @FindBy(xpath = "//input[@placeholder='your password']")
     @AndroidFindBy(xpath = "//android.widget.EditText[@text = 'Password']")
     @iOSXCUITFindBy()
-    private MobileElement elePassword;
+    private WebElement elePassword;
 
     @FindBy(xpath = "//span[@class='auth0-label-submit']")
     @AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Login']")
     @iOSXCUITFindBy()
-    private MobileElement eleLogInBtn;
+    private WebElement eleLogInBtn;
 
     WebDriver driver;
 
@@ -53,7 +52,9 @@ public class SignInPage extends Page {
     }
 
     public void signIn(String username, String password) throws Exception{
+        clickElement(eleUserName);
         enterText(eleUserName, username);
+        clickElement(elePassword);
         enterText(elePassword, password);
         clickElement(eleLogInBtn);
     }

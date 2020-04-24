@@ -6,6 +6,7 @@ import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.aclframework.helpers.Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -16,12 +17,12 @@ public class DashboardPage extends Page {
     @FindBy(xpath = "//div[contains(@class, 'mx-dataview-content')]/div/div/h5[contains(text(), 'Logged into: Agent')]")
     @AndroidFindBy(xpath = "Sign out")
     @iOSXCUITFindBy()
-    private WebElement eleAgentLoginText;
+    private MobileElement eleAgentLoginText;
 
     @FindBy(xpath = "//span[contains(text(), 'Wrong username or password.')]")
     @AndroidFindBy(xpath = "Your ID or Password didn't match. Please try again.")
     @iOSXCUITFindBy()
-    private WebElement loginErrorMessage;
+    private MobileElement loginErrorMessage;
 
     WebDriver driver;
 

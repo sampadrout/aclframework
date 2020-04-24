@@ -6,6 +6,7 @@ import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.aclframework.helpers.Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -18,7 +19,7 @@ public class HomePage extends Page {
     @FindBy(xpath = "//a[@id='ssoButton']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
-    private WebElement eleSignInBtn;
+    private MobileElement eleSignInBtn;
 
     public HomePage(WebDriver driver) throws InterruptedException {
         this.driver = driver;

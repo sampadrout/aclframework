@@ -17,10 +17,14 @@ public class WebDriverBuilder extends DeviceConfig {
         if (platformName.equalsIgnoreCase(PlatformName.CHROME.name())) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
+            driver.manage().window().maximize();
+
         } else if (platformName.equalsIgnoreCase(PlatformName.FIREFOX.name())) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
+            driver.manage().window().maximize();
         }
+
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         setExecutionPlatform(platformName);
         return driver;

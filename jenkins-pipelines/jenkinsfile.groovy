@@ -22,7 +22,4 @@ node{'acl-slave'} {
             ])
         }
     }
-    stage('Results') {
-        junit '**/target/failsafe-reports/*.xml'
-    }
 }

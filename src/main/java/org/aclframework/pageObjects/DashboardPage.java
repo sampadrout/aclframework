@@ -13,10 +13,30 @@ import static org.aclframework.logger.LoggingManager.logMessage;
 
 public class DashboardPage extends Page {
 
-    @FindBy(xpath = "//div[contains(@class, 'mx-dataview-content')]/div/div/h5[contains(text(), 'Logged into: Agent')]")
-    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,  \"Today's Jobs\")]")
+    @FindBy(xpath = "")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text, \"Today's Jobs\")]")
     @iOSXCUITFindBy()
     private WebElement todayJobTab;
+
+    @FindBy(xpath = "")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text, 'All Jobs')]")
+    @iOSXCUITFindBy()
+    private WebElement allJobTab;
+
+    @FindBy(xpath = "")
+    @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text, 'Filter')]")
+    @iOSXCUITFindBy()
+    private WebElement filterButton;
+
+    @FindBy(xpath = "")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text = '{value}']")
+    @iOSXCUITFindBy()
+    private WebElement numberOfFilters;
+
+    @FindBy(xpath = "")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text = 'Modify Filter']")
+    @iOSXCUITFindBy()
+    private WebElement modifyFilterButton;
 
     @FindBy(xpath = "//span[contains(text(), 'Wrong username or password.')]")
     @AndroidFindBy(xpath = "//android.widget.TextView[contains(@text, \"Your ID or Password didn't match.\")]")

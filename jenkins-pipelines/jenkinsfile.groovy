@@ -1,5 +1,5 @@
 #!groovy
-node{'acl-slave'} {
+node('acl-slave') {
     stage('Git checkout') { // for display purposes
         git 'https://github.com/sampadrout/aclframework.git'
     }

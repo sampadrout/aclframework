@@ -3,7 +3,7 @@
 This is a generic Page Object Model which solves all your automation needs with single codebase.<br>
 We often tend to create different test frameworks for different platforms and it's very difficult for anyone to serve all platform needs in one test automation framework.<br>
 
-<b>`ACLFramework solves all your needs. You just give the locator and leave the rest to OneFramework.`</b><br>
+<b>`ACLFramework solves all your needs. You just give the locator and leave the rest to ACLFramework.`</b><br>
 
 ## Contents:
 
@@ -86,7 +86,9 @@ We have "testng.xml" file which has tests for each and every platform in cross b
 ## How To Run Tests:
 
 $ gradle clean build
+```
 $ java -jar build/libs/Automation-1.0-SNAPSHOT.jar capture
+``` 
 $ java -jar build/libs/Automation-1.0-SNAPSHOT.jar compare
 ```
 <b>`Note:`</b>`capture & compare are the image capture and compare modes.`</b>

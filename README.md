@@ -85,10 +85,12 @@ We have "testng.xml" file which has tests for each and every platform in cross b
  
 ## How To Run Tests:
 
-``` 
+```
 $ gradle clean build
 ```
+```
 $ java -jar build/libs/Automation-1.0-SNAPSHOT.jar capture
+```
 ```
 $ java -jar build/libs/Automation-1.0-SNAPSHOT.jar compare
 ```

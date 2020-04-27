@@ -8,6 +8,6 @@
     "packageName": "com.cinch.cinchpro",
     "activity": "com.mendix.nativetemplate.MainActivity",
     "reset": true,
-    "app": "app-appstore-debug.apk"
+    "app": "/Users/sampadrout/ACLFramework/src/main/resources/app-appstore-release.apk"
   }
 ]

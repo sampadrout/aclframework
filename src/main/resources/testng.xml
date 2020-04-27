@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Agent Portal - E2E Test Suite" parallel="none">
+<suite name="Service Provider Portal - E2E Test Suite" parallel="none">
     <!--    <test name="Home Page Test - Chrome">-->
     <!--        <parameter name="platformType" value="web"/>-->
     <!--        <parameter name="platformName" value="chrome"/>-->
@@ -16,7 +16,7 @@
     <!--            <class name="tests.SignInPageTest"/>-->
     <!--        </classes>-->
     <!--    </test>-->
-    <test name="Sign In Test - Android">
+    <test name="Technician Sign In Test - Android">
         <parameter name="platformType" value="mobile"/>
         <parameter name="platformName" value="android"/>
         <parameter name="model" value="Pixel"/>

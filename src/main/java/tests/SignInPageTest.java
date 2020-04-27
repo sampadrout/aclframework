@@ -12,7 +12,7 @@ public class SignInPageTest extends BaseTest {
 
     SoftAssert softAssert = new SoftAssert();
 
-    @Test(description = "test valid agent signin")
+    @Test(description = "test valid technician signin")
     public void testValidSignIn() throws Exception {
         SignInPage signInPage = new SignInPage(driver);
         DashboardPage dashboardPage = new DashboardPage(driver);
@@ -22,7 +22,7 @@ public class SignInPageTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test(description = "test invalid agent signin")
+    @Test(description = "test invalid technician signin")
     public void testInvalidSign() throws Exception {
         SignInPage signInPage = new SignInPage(driver);
         DashboardPage dashboardPage = new DashboardPage(driver);

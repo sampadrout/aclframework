@@ -3,7 +3,7 @@
 This is a generic Page Object Model which solves all your automation needs with single codebase.<br>
 We often tend to create different test frameworks for different platforms and it's very difficult for anyone to serve all platform needs in one test automation framework.<br>
 
-<b>`OneFramework solves all your needs. You just give the locator and leave the rest to OneFramework.`</b><br>
+<b>`ACLFramework solves all your needs. You just give the locator and leave the rest to OneFramework.`</b><br>
 
 ## Contents:
 
@@ -15,8 +15,6 @@ We often tend to create different test frameworks for different platforms and it
 * [How To Run Tests](#how-to-run-tests)
 * [How To See Allure Result Report](#how-to-see-allure-result-report)
 * [Image Comparison Output](#image-comparison-output)
-* [Pending Tasks](#pending-tasks)
-* [How To Contribute?](#how-to-contribute)
 
 ## Features:
 
@@ -81,11 +79,8 @@ We have "testng.xml" file which has tests for each and every platform in cross b
 ###### Here are the minimal things you have to do:
  
  - Create your tests
- - Create your Page Object class w.r.t test that you have written, if not created already (Take the reference from <b>org.oneframework.pageObjects</b>).<br>
- For e.g, SignIn button locators for web, ios & android set as shown below.<br>
- <img src="https://res.cloudinary.com/dxeolpmip/image/upload/v1552327264/Platform_Locator.png" width="400"> 
- - If mobile app, Set the android, ios device details in corresponding files in resources directory as shown below.<br>
- <img src="https://res.cloudinary.com/dxeolpmip/image/upload/v1549904075/Pixel.png" width="350"> <img src="https://res.cloudinary.com/dxeolpmip/image/upload/v1549904074/iPhone6S.png" width="350">
+ - Create your Page Object class w.r.t test that you have written
+ - If mobile app, Set the android, ios device details in corresponding files in resources directory
  - If web app, Set web app URL in BaseTest
  
 ## How To Run Tests:

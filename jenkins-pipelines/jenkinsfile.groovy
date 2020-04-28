@@ -4,7 +4,8 @@ node('acl-slave') {
         git 'https://github.com/sampadrout/aclframework.git'
     }
     stage('Build') { // for display purposes
-        sh "gradle clean build"
+        def gradleHome = tool 'gradle4'
+        sh "'$gradleHome/bin/gradle' clean build"
     }
     stage('Run') { // for display purposes
         sh "java -jar build/libs/Automation-1.0-SNAPSHOT.jar"

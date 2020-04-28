@@ -9,17 +9,22 @@ node('acl-slave') {
     stage('Run') { // for display purposes
         sh "java -jar build/libs/Automation-1.0-SNAPSHOT.jar"
     }
-    stage('Build Report') {
-        try {
-            sh "allure generate -c allure-results"
-        } catch (err) {
-
-        } finally {
-            publishHTML (target: [
-                    reportDir: 'allure-results',
-                    reportFiles: 'index.html',
-                    reportName: "Mobile Test Report"
+    stage('Build Report1') {
+        script {
+            allure([
+                    includeProperties: false,
+                    jdk: '',
+                    reportBuildPolicy: 'ALWAYS',
+                    results: [[path: 'allure-results']],
+                    report: "allure-report"
             ])
         }
+    }
+    stage('Publish Report'){
+        publishHTML (target: [
+                reportDir: 'allure-report',
+                reportFiles: 'index.html',
+                reportName: "Mobile Test Report"
+        ])
     }
 }

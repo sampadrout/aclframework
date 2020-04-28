@@ -1,13 +1,9 @@
 .idea/*
 .idea/.
 .gradle/*
-gradle/
-gradle/*
 out/*
 target/*
 build/*
-gradlew
-gradlew.bat
 src/main/main.iml
 src/test/test.iml
 test-output/

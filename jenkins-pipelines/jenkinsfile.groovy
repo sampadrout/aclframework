@@ -1,5 +1,8 @@
 #!groovy
 node('acl-slave') {
+    tools {
+        gradle "Gradle-6.3"
+    }
     stage('Git checkout') { // for display purposes
         git 'https://github.com/sampadrout/aclframework.git'
     }

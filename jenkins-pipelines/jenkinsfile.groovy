@@ -1,10 +1,10 @@
 #!groovy
 node('acl-slave') {
     stage('Git checkout') { // for display purposes
-        git branch:'develop-mobile' url: 'https://github.com/sampadrout/aclframework.git'
+        git branch:'develop-mobile', url: 'https://github.com/sampadrout/aclframework.git'
     }
     stage('Build') { // for display purposes
-        sh "gradle clean build"
+        sh "./gradlew clean build"
     }
     stage('Run') { // for display purposes
         sh "java -jar build/libs/Automation-1.0-SNAPSHOT.jar"

@@ -19,6 +19,10 @@ public class Page {
         element.sendKeys(value);
     }
 
+    public void clearText(WebElement element) {
+        element.clear();
+    }
+
     public boolean checkElement(WebElement element) {
         return element.isDisplayed();
     }

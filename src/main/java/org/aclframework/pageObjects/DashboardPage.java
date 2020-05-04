@@ -14,14 +14,29 @@ import static org.aclframework.logger.LoggingManager.logMessage;
 public class DashboardPage extends Page {
 
     @FindBy(xpath = "//div[contains(@class, 'mx-dataview-content')]/div/div/h5[contains(text(), 'Logged into: Agent')]")
-    @AndroidFindBy(tagName = "Sign out")
+    @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement eleAgentLoginText;
 
     @FindBy(xpath = "//span[contains(text(), 'Wrong username or password.')]")
-    @AndroidFindBy(tagName = "Your ID or Password didn't match. Please try again.")
+    @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement loginErrorMessage;
+
+    @FindBy(xpath = "//ul[contains(@class, 'nav navbar-nav')]/li/a[contains(text(), 'Administration')]")
+    @AndroidFindBy()
+    @iOSXCUITFindBy()
+    private WebElement tabAdministration;
+
+    @FindBy(xpath = "//ul[contains(@class, 'nav navbar-nav')]/li/a[contains(text(), 'Service Jobs')]")
+    @AndroidFindBy()
+    @iOSXCUITFindBy()
+    private WebElement tabServiceJobs;
+
+    @FindBy(xpath = "//ul[contains(@class, 'nav navbar-nav')]/li/a[contains(text(), 'Feedback')]")
+    @AndroidFindBy()
+    @iOSXCUITFindBy()
+    private WebElement tabFeedback;
 
     WebDriver driver;
 
@@ -42,4 +57,15 @@ public class DashboardPage extends Page {
         Thread.sleep(10000);
         return checkElement(loginErrorMessage);
     }
+
+    public void navigateToTab(String tabName) {
+        if (tabName.equals("Administration")) {
+            clickElement(tabAdministration);
+        } else if (tabName.equals("Service Jobs")) {
+            clickElement(tabServiceJobs);
+        } else {
+            clickElement(tabFeedback);
+        }
+    }
+
 }

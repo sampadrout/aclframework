@@ -16,6 +16,13 @@
             <class name="tests.SignInPageTest"/>
         </classes>
     </test>
+    <test name="Create Company Test - Chrome">
+        <parameter name="platformType" value="web"/>
+        <parameter name="platformName" value="chrome"/>
+        <classes>
+            <class name="tests.CreateCompanyTest"/>
+        </classes>
+    </test>
 
     <!--    </test>-->
     <!--    <test name="Home Page Test - Firefox">-->

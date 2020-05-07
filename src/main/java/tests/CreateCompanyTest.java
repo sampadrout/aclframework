@@ -39,8 +39,8 @@ public class CreateCompanyTest extends BaseTest {
         ServiceProsPage serviceProsPage = new ServiceProsPage(driver);
         CompanyDetailsPage companyDetailsPage = new CompanyDetailsPage(driver);
         CoveragePage coveragePage = new CoveragePage(driver);
-//        ItemsAndBrandsPage itemsAndBrandsPage = new ItemsAndBrandsPage(driver);
-//        LaborRatesPage laborRatesPage = new LaborRatesPage(driver);
+        ItemsAndBrandsPage itemsAndBrandsPage = new ItemsAndBrandsPage(driver);
+        LaborRatesPage laborRatesPage = new LaborRatesPage(driver);
 //        AvailabilityPage availabilityPage = new AvailabilityPage(driver);
 
         homePage.chooseSignInOption();
@@ -51,8 +51,10 @@ public class CreateCompanyTest extends BaseTest {
         companyDetailsPage.enterCompanyDetails(company_details);
         coveragePage.gotoCoverageTab();
         coveragePage.enterCoverageDetails();
-//        itemsAndBrandsPage.enterItemsAndBrandDetails();
-//        laborRatesPage.enterLaborRatesDetails();
+        itemsAndBrandsPage.gotoItemsAndBrandsTab();
+        itemsAndBrandsPage.enterItemsAndBrandDetails();
+        laborRatesPage.gotoLaborRatesTab();
+        laborRatesPage.enterLaborRatesDetails();
 //        availabilityPage.enterAvailabilityDetails();
 //        softAssert.assertTrue(serviceProsPage.searchServicePros(), "");
         softAssert.assertAll();

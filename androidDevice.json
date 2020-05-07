@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Pixel",
+    "deviceName": "emulator-5554",
+    "platformName": "Android",
+    "platformVersion": "9",
+    "automationName": "UIAutomator2",
+    "packageName": "com.cinch.cinchpro",
+    "activity": "com.mendix.nativetemplate.MainActivity",
+    "reset": true,
+    "app": "app-appstore-debug.apk"
+  }
+]

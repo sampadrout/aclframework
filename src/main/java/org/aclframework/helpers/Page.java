@@ -1,14 +1,25 @@
 package org.aclframework.helpers;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class Page {
 
-    WebDriver driver;
-
     public void clickElement(WebElement element) {
         element.click();
+    }
+
+    public void clickElement(String locator, String val_to_be_replaced, WebDriver driver) throws Exception {
+        try {
+            if (val_to_be_replaced != null) {
+                locator = locator.replace("{value}", val_to_be_replaced);
+            }
+            WebElement element = driver.findElement(By.xpath(locator));
+            element.click();
+        } catch (Exception e) {
+
+        }
     }
 
     public String getText(WebElement element) {

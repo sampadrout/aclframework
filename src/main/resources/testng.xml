@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Agent Portal - E2E Test Suite" parallel="none">
-    <test name="Home Page Test - Chrome">
+<suite name="Agent Portal - E2E Test Suite" parallel="tests" thread-count="3">
+    <test name="Home Page Test - Firefox">
         <parameter name="platformType" value="web"/>
-        <parameter name="platformName" value="chrome"/>
+        <parameter name="platformName" value="firefox"/>
         <classes>
             <class name="tests.HomePageTest"/>
         </classes>
     </test>
-    <test name="Sign In Test - Chrome">
+    <test name="Sign In Test - Firefox">
         <parameter name="platformType" value="web"/>
-        <parameter name="platformName" value="chrome"/>
+        <parameter name="platformName" value="firefox"/>
         <classes>
             <class name="tests.SignInPageTest"/>
         </classes>

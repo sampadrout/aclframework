@@ -1,3 +1,8 @@
+/*
+ * @author Sampad Rout
+ * (C) Copyright 2019 by Accion Labs Inc.
+ */
+
 package org.aclframework.logger;
 
 import java.util.logging.Logger;

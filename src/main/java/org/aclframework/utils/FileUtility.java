@@ -1,3 +1,8 @@
+/*
+ * @author Sampad Rout
+ * (C) Copyright 2019 by Accion Labs Inc.
+ */
+
 package org.aclframework.utils;
 
 import org.apache.commons.io.FileUtils;

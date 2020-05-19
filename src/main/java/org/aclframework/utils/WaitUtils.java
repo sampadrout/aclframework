@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class WaitUtils {
-    public final int explicitWaitDefault = 10;
+    public final int explicitWaitDefault = 30;
 
     /**
      * This method is for static wait

@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import static org.aclframework.logger.LoggingManager.logMessage;
+import org.aclframework.utils.WaitUtils;
 
 public class ItemsAndBrandsPage extends Page {
 
@@ -60,6 +61,7 @@ public class ItemsAndBrandsPage extends Page {
     private WebElement eleOK;
 
     WebDriver driver;
+    WaitUtils waitUtils;
 
     public ItemsAndBrandsPage(WebDriver driver) throws InterruptedException {
         this.driver = driver;
@@ -75,8 +77,9 @@ public class ItemsAndBrandsPage extends Page {
     }
 
     public void enterItemsAndBrandDetails() throws InterruptedException {
-        Thread.sleep(10000);
-        clickElement(expandTrades);
+//        Thread.sleep(10000);
+        clickElement(waitUtils.waitForElementToBeClickable(expandTrades, driver));
+//        clickElement(expandTrades);
         Thread.sleep(2000);
 //        clickElement("//a[@id='{value}']", "ssoButton", driver);
 //        JavascriptExecutor executor = (JavascriptExecutor)driver;

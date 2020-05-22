@@ -21,6 +21,11 @@ public class HomePage extends Page {
     @iOSXCUITFindBy()
     private WebElement eleSignInBtn;
 
+    @FindBy(xpath = "//span[@class='register-signin']")
+    @AndroidFindBy()
+    @iOSXCUITFindBy()
+    private WebElement userRegistrationLink;
+
     public HomePage(WebDriver driver) throws InterruptedException {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -31,6 +36,11 @@ public class HomePage extends Page {
 
     public HomePage chooseSignInOption() throws Exception {
         clickElement(eleSignInBtn);
+        return new HomePage(driver);
+    }
+
+    public HomePage chooseUserRegistration() throws Exception {
+        clickElement(userRegistrationLink);
         return new HomePage(driver);
     }
 

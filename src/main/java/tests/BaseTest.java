@@ -65,7 +65,7 @@ public class BaseTest {
             driver = new WebDriverBuilder().setupDriver(platformName);
         }
         logMessage(platformName + " driver has been created for execution");
-        driver.get("https://cinchhs-agent-accp.mendixcloud.com/login.html");
+        driver.get("https://servicepartner100-accp.mendixcloud.com/");
     }
 
     @AfterMethod

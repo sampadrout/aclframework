@@ -20,7 +20,7 @@
         <parameter name="platformType" value="web"/>
         <parameter name="platformName" value="chrome"/>
         <classes>
-            <class name="tests.CreateCompanyTest"/>
+            <class name="tests.UserOnboardingTest"/>
         </classes>
     </test>
 

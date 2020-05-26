@@ -4,6 +4,7 @@
 
 package org.aclframework.utils;
 
+import bsh.XThis;
 import io.appium.java_client.ios.IOSElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class WaitUtils {
+
+    WebDriver driver;
+
     public final int explicitWaitDefault = 30;
 
     /**

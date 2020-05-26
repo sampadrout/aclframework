@@ -3,7 +3,7 @@ package org.aclframework.pageObjects;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
-import org.aclframework.helpers.Page;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,11 +12,12 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.*;
 
+import org.aclframework.helpers.Page;
+import org.aclframework.utils.WaitUtils;
+
 import static org.aclframework.logger.LoggingManager.logMessage;
 
 public class UserRegistration extends Page {
-
-    WebDriver driver;
 
     @FindBy(xpath = "//input[contains(@placeholder, 'Company ID')]")
     @AndroidFindBy()
@@ -28,22 +29,22 @@ public class UserRegistration extends Page {
     @iOSXCUITFindBy()
     private WebElement eleEmailAddress;
 
-    @FindBy(xpath = "//input[contains(@placeholder, 'First Name')]")
+    @FindBy(xpath = "//*[@type='text' and @placeholder='First Name']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement eleFirstName;
 
-    @FindBy(xpath = "//input[contains(@placeholder, 'Last Name')]")
+    @FindBy(xpath = "//*[@type='text' and @placeholder='Last Name']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement eleLastName;
 
-    @FindBy(xpath = "//input[contains(@placeholder, 'Enter Password')]")
+    @FindBy(xpath = "//*[@type='password' and @placeholder='Enter Password']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement eleEnterPassword;
 
-    @FindBy(xpath = "//input[contains(@placeholder, 'Re-Enter Password')]")
+    @FindBy(xpath = "//*[@type='password' and @placeholder='Re-Enter Password']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement eleReEnterPassword;
@@ -52,6 +53,19 @@ public class UserRegistration extends Page {
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement eleCreateAccount;
+
+    @FindBy(xpath = "//h1[contains(text(), 'Account Creation Completed.')]")
+    @AndroidFindBy()
+    @iOSXCUITFindBy()
+    private WebElement eleAccountCreationText;
+
+    @FindBy(xpath = "/*[@type='button' and text()='Login']")
+    @AndroidFindBy()
+    @iOSXCUITFindBy()
+    private WebElement eleLoginBtn;
+
+    WebDriver driver;
+    WaitUtils waitUtils = new WaitUtils();
 
     public UserRegistration(WebDriver driver) throws InterruptedException {
         this.driver = driver;
@@ -62,13 +76,20 @@ public class UserRegistration extends Page {
     }
 
     public void completeUserRegistration(Map<String, String> testdata) throws Exception {
-        enterText(eleCompanyID, testdata.get("companyid"));
-        enterText(eleEmailAddress, testdata.get("emailaddress"));
-        enterText(eleFirstName, testdata.get("firstname"));
-        enterText(eleLastName, testdata.get("lastname"));
-        enterText(eleEnterPassword, testdata.get("enterpassword"));
-        enterText(eleReEnterPassword, testdata.get("reenterpassword"));
-//        Thread.sleep(10000);
-        clickElement(eleCreateAccount);
+        enterText(waitUtils.waitForElementToBeClickable(eleCompanyID, driver), testdata.get("companyid"));
+        enterText(waitUtils.waitForElementToBeClickable(eleEmailAddress, driver), testdata.get("emailaddress"));
+        enterText(waitUtils.waitForElementToBeClickable(eleFirstName, driver), testdata.get("firstname"));
+        enterText(waitUtils.waitForElementToBeClickable(eleLastName, driver), testdata.get("lastname"));
+        enterText(waitUtils.waitForElementToBeClickable(eleEnterPassword, driver), testdata.get("enterpassword"));
+        enterText(waitUtils.waitForElementToBeClickable(eleReEnterPassword, driver), testdata.get("reenterpassword"));
+        clickElement(waitUtils.waitForElementToBeClickable(eleCreateAccount, driver));
+    }
+
+    public boolean accountCreationTextDisplayed() {
+        return checkElement(eleAccountCreationText);
+    }
+
+    public void navigateToSPLogin() {
+        clickElement(eleLoginBtn);
     }
 }

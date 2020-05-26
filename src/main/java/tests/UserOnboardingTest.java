@@ -14,12 +14,12 @@ import java.util.*;
 public class UserOnboardingTest extends BaseTest {
 
     Map<String, String> user_details = new HashMap<String, String>(){{
-        put("companyid","417");
-        put("emailaddress","testuser@test.com");
+        put("companyid","804");
+        put("emailaddress","autotest@mail.com");
         put("firstname","Automation");
         put("lastname","User");
-        put("enterpassword","Aa1234");
-        put("reenterpassword","Aa1234");
+        put("enterpassword","Aa123456!");
+        put("reenterpassword","Aa123456!");
     }};
 
     SoftAssert softAssert = new SoftAssert();
@@ -31,5 +31,8 @@ public class UserOnboardingTest extends BaseTest {
 
         homePage.chooseUserRegistration();
         userRegistration.completeUserRegistration(user_details);
+        softAssert.assertTrue(userRegistration.accountCreationTextDisplayed(), "User onboarding failed");
+        userRegistration.navigateToSPLogin();
+        softAssert.assertAll();
     }
 }

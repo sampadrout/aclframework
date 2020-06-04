@@ -23,7 +23,7 @@ public class UserOnboardingTest extends BaseTest {
     }};
 
     SoftAssert softAssert = new SoftAssert();
-    
+
     @Test(description = "This is the test for user onboarding")
     public void testUserOnboarding() throws Exception {
         HomePage homePage = new HomePage(driver);

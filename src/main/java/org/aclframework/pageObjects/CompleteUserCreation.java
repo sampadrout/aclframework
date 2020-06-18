@@ -19,32 +19,32 @@ import static org.aclframework.logger.LoggingManager.logMessage;
 
 public class UserRegistration extends Page {
 
-    @FindBy(xpath = "//input[contains(@placeholder, 'Company ID')]")
+    @FindBy(xpath = "//input[@placeholder='Company ID']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement eleCompanyID;
 
-    @FindBy(xpath = "//input[contains(@placeholder, 'Email Address')]")
+    @FindBy(xpath = "//input[@placeholder='Email Address']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement eleEmailAddress;
 
-    @FindBy(xpath = "//*[@type='text' and @placeholder='First Name']")
+    @FindBy(xpath = "//input[@placeholder='First Name']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement eleFirstName;
 
-    @FindBy(xpath = "//*[@type='text' and @placeholder='Last Name']")
+    @FindBy(xpath = "//input[@placeholder='Last Name']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement eleLastName;
 
-    @FindBy(xpath = "//*[@type='password' and @placeholder='Enter Password']")
+    @FindBy(xpath = "//input[@placeholder='Enter Password']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement eleEnterPassword;
 
-    @FindBy(xpath = "//*[@type='password' and @placeholder='Re-Enter Password']")
+    @FindBy(xpath = "//input[@placeholder='Re-Enter Password']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement eleReEnterPassword;
@@ -75,7 +75,7 @@ public class UserRegistration extends Page {
         Thread.sleep(1000);
     }
 
-    public void completeUserRegistration(Map<String, String> testdata) throws Exception {
+    public void completeUserCreation(Map<String, String> testdata) throws Exception {
         enterText(waitUtils.waitForElementToBeClickable(eleCompanyID, driver), testdata.get("companyid"));
         enterText(waitUtils.waitForElementToBeClickable(eleEmailAddress, driver), testdata.get("emailaddress"));
         enterText(waitUtils.waitForElementToBeClickable(eleFirstName, driver), testdata.get("firstname"));

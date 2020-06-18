@@ -14,12 +14,16 @@ import java.util.*;
 public class UserOnboardingTest extends BaseTest {
 
     Map<String, String> user_details = new HashMap<String, String>(){{
-        put("companyid","804");
-        put("emailaddress","autotest@mail.com");
-        put("firstname","Automation");
-        put("lastname","User");
-        put("enterpassword","Aa123456!");
-        put("reenterpassword","Aa123456!");
+        put("companyid","70494");
+        put("emailaddress","mgc@mgc.com");
+        put("firstname","MG");
+        put("lastname","Company");
+        put("enterpassword","Zz123456!");
+        put("reenterpassword","Zz123456!");
+    }};
+
+    Map<String, String> account_details = new HashMap<String, String>(){{
+        put("typeeofownership", "Limited Liability Company");
     }};
 
     SoftAssert softAssert = new SoftAssert();

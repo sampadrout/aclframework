@@ -75,6 +75,11 @@ public class Coverage extends Page {
     @iOSXCUITFindBy()
     private WebElement eleContinue;
 
+    @FindBy(xpath = "(//button[text()='Continue'])[2]")
+    @AndroidFindBy()
+    @iOSXCUITFindBy()
+    private WebElement eleContinueZipCodeSelection;
+
     @FindBy(xpath = "//button[text()='Save and Continue']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
@@ -96,7 +101,7 @@ public class Coverage extends Page {
     }
 
     public void enterCoverageDetails() throws InterruptedException {
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         clickElement(dropDownState);
         Thread.sleep(2000);
         clickElement(inputSearch);
@@ -118,9 +123,8 @@ public class Coverage extends Page {
         clickElement(searchedCounty);
         Thread.sleep(2000);
         clickElement(addCounty);
-        Thread.sleep(15000);
-        Thread.sleep(2000);
-        clickElement(eleContinue);
+        Thread.sleep(10000);
+        clickElement(eleContinueZipCodeSelection);
         /*clickElement(dropDownZipCode);
         Thread.sleep(2000);
         clickElement(inputSearch);
@@ -130,7 +134,7 @@ public class Coverage extends Page {
         clickElement(searchedZipCode);
         Thread.sleep(2000);
         clickElement(addZipCode);*/
-        Thread.sleep(2000);
+        Thread.sleep(10000);
         clickElement(eleSaveAndContinueBtn);
         Thread.sleep(5000);
     }

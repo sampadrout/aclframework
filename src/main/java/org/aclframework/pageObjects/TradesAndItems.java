@@ -46,6 +46,11 @@ public class TradesAndItems extends  Page {
     @iOSXCUITFindBy()
     private WebElement selectBrandName;
 
+    @FindBy(xpath = "//button[text()='Continue']")
+    @AndroidFindBy()
+    @iOSXCUITFindBy()
+    private WebElement eleContinue;
+
     @FindBy(xpath = "//button[text()='Save and Continue']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
@@ -71,7 +76,7 @@ public class TradesAndItems extends  Page {
         Thread.sleep(5000);
         clickElement(selectAppliance);
         Thread.sleep(10000);
-        clickElement(eleSaveAndContinueBtn);
+        clickElement(eleContinue);
         Thread.sleep(10000);
         clickElement(eleSaveAndContinueBtn);
         Thread.sleep(10000);

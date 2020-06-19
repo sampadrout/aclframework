@@ -16,7 +16,7 @@ public class HomePage extends Page {
 
     WebDriver driver;
 
-    @FindBy(xpath = "//a[@id='ssoButton']")
+    @FindBy(xpath = "//span[@class='loginpage-signin']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement eleSignInBtn;

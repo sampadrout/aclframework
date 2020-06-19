@@ -59,7 +59,7 @@ public class UserRegistration extends Page {
     @iOSXCUITFindBy()
     private WebElement eleAccountCreationText;
 
-    @FindBy(xpath = "/*[@type='button' and text()='Login']")
+    @FindBy(xpath = "//button[text()='Login']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement eleLoginBtn;
@@ -76,6 +76,7 @@ public class UserRegistration extends Page {
     }
 
     public void completeUserCreation(Map<String, String> testdata) throws Exception {
+        Thread.sleep(5000);
         enterText(waitUtils.waitForElementToBeClickable(eleCompanyID, driver), testdata.get("companyid"));
         enterText(waitUtils.waitForElementToBeClickable(eleEmailAddress, driver), testdata.get("emailaddress"));
         enterText(waitUtils.waitForElementToBeClickable(eleFirstName, driver), testdata.get("firstname"));

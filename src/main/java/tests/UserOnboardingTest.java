@@ -14,9 +14,9 @@ import java.util.*;
 public class UserOnboardingTest extends BaseTest {
 
     Map<String, String> user_details = new HashMap<String, String>(){{
-        put("companyid","70494");
-        put("emailaddress","mgc@mgc.com");
-        put("firstname","MG");
+        put("companyid","251");
+        put("emailaddress","test39@test.com");
+        put("firstname","A39");
         put("lastname","Company");
         put("enterpassword","Zz123456!");
         put("reenterpassword","Zz123456!");

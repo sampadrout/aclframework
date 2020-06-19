@@ -46,7 +46,7 @@ public class CompanyInfo extends Page {
     }
 
     public void enterCompanyDetails(Map<String, String> testdata) throws InterruptedException {
-        Thread.sleep(10000);
+        Thread.sleep(5000);
         enterText(eleTypeOfOwnership, testdata.get("typeeofownership"));
         Thread.sleep(5000);
         clickElement(eleSaveAndContinueBtn);

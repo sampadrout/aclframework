@@ -50,10 +50,10 @@ public class Availability extends Page {
     @iOSXCUITFindBy()
     private WebElement eleApplyRuleBtn;
 
-    @FindBy(xpath = "//button[text()='Save and Continue']")
+    @FindBy(xpath = "//button[text()='Confirm and Save']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
-    private WebElement eleSaveAndContinueBtn;
+    private WebElement eleConfirmAndSaveBtn;
 
     @FindBy(xpath = "//p[contains(text(),'Onboarding complete.')]")
     @AndroidFindBy()
@@ -91,26 +91,35 @@ public class Availability extends Page {
     }
 
     public void enterAvailabilityDetails() throws InterruptedException, Exception {
-        Thread.sleep(30000);
+        Thread.sleep(5000);
         clickElement(eleBulkEditLink);
         Thread.sleep(5000);
         enterText(eleTimeSlotDropdown, "4 Hour");
         Thread.sleep(5000);
-        clickElement("//span[contains(text(), '{value}}')]/parent::div/div/input","Monday", driver);
-        clickElement("//span[contains(text(), '{value}}')]/parent::div/div/input","Tuesday", driver);
-        clickElement("//span[contains(text(), '{value}}')]/parent::div/div/input","Wednesday", driver);
-        clickElement("//span[contains(text(), '{value}}')]/parent::div/div/input","Thursday", driver);
-        clickElement("//span[contains(text(), '{value}}')]/parent::div/div/input","Friday", driver);
-        clickElement("//span[contains(text(), '{value}}')]/parent::div/div/input","Saturday", driver);
-        clickElement("//span[contains(text(), '{value}}')]/parent::div/div/input","Sunday", driver);
-        clickElement("//span[contains(text(), '{value}}')]/parent::div/div/input","8am - 12pm", driver);
-        clickElement("//span[contains(text(), '{value}}')]/parent::div/div/input","12pm - 4pm", driver);
-        clickElement("//span[contains(text(), '{value}}')]/parent::div/div/input","4pm - 8pm", driver);
+        clickElement("//span[contains(text(), '{value}')]/parent::div[contains(@class,'ClickableContainer')]","Monday", driver);
+        Thread.sleep(2000);
+        clickElement("//span[contains(text(), '{value}')]/parent::div[contains(@class,'ClickableContainer')]","Tuesday", driver);
+        Thread.sleep(2000);
+        clickElement("//span[contains(text(), '{value}')]/parent::div[contains(@class,'ClickableContainer')]","Wednesday", driver);
+        Thread.sleep(2000);
+        clickElement("//span[contains(text(), '{value}')]/parent::div[contains(@class,'ClickableContainer')]","Thursday", driver);
+        Thread.sleep(2000);
+        clickElement("//span[contains(text(), '{value}')]/parent::div[contains(@class,'ClickableContainer')]","Friday", driver);
+        Thread.sleep(2000);
+        clickElement("//span[contains(text(), '{value}')]/parent::div[contains(@class,'ClickableContainer')]","Saturday", driver);
+        Thread.sleep(2000);
+        clickElement("//span[contains(text(), '{value}')]/parent::div[contains(@class,'ClickableContainer')]","Sunday", driver);
+        Thread.sleep(2000);
+        clickElement("//span[contains(text(), '{value}')]/parent::div[contains(@class,'ClickableContainer')]","8am - 12pm", driver);
+        Thread.sleep(2000);
+        clickElement("//span[contains(text(), '{value}')]/parent::div[contains(@class,'ClickableContainer')]","12pm - 4pm", driver);
+        Thread.sleep(2000);
+        clickElement("//span[contains(text(), '{value}')]/parent::div[contains(@class,'ClickableContainer')]","4pm - 8pm", driver);
         Thread.sleep(5000);
         enterText(eleCapacityEdit, "10");
         clickElement(eleApplyRuleBtn);
         Thread.sleep(5000);
-        clickElement(eleSaveAndContinueBtn);
+        clickElement(eleConfirmAndSaveBtn);
         Thread.sleep(5000);
         clickElement(eleOKBtn);
         Thread.sleep(5000);

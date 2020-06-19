@@ -1,6 +1,7 @@
 package org.aclframework.helpers;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -28,6 +29,12 @@ public class Page {
 
     public void enterText(WebElement element, String value) {
         element.sendKeys(value);
+    }
+
+    public void enterText(WebElement element, String value, String key) {
+        element.clear();
+        element.sendKeys(value);
+        element.sendKeys(Keys.ENTER);
     }
 
     public void clearText(WebElement element) {

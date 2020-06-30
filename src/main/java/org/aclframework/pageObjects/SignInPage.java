@@ -16,12 +16,12 @@ import static org.aclframework.logger.LoggingManager.logMessage;
 
 public class SignInPage extends Page {
 
-    @FindBy(xpath = "//div[contains(text(), 'Cinch Home Services - Agent')]")
+    @FindBy(xpath = "//div[contains(text(), 'CinchPro')]")
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement eleSignInTitle;
 
-    @FindBy(xpath = "//input[@placeholder='username/email']")
+    @FindBy(xpath = "//input[@placeholder='yours@example.com']")
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement eleUserName;

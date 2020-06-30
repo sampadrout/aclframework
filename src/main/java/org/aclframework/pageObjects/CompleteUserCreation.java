@@ -17,7 +17,7 @@ import org.aclframework.utils.WaitUtils;
 
 import static org.aclframework.logger.LoggingManager.logMessage;
 
-public class UserRegistration extends Page {
+public class CompleteUserCreation extends Page {
 
     @FindBy(xpath = "//input[@placeholder='Company ID']")
     @AndroidFindBy()
@@ -67,7 +67,7 @@ public class UserRegistration extends Page {
     WebDriver driver;
     WaitUtils waitUtils = new WaitUtils();
 
-    public UserRegistration(WebDriver driver) throws InterruptedException {
+    public CompleteUserCreation(WebDriver driver) throws InterruptedException {
         this.driver = driver;
         PageFactory.initElements(driver, this);
         logMessage("Initializing the "+this.getClass().getSimpleName()+" elements");

@@ -75,15 +75,17 @@ public class UserRegistration extends Page {
         Thread.sleep(1000);
     }
 
-    public void completeUserCreation(Map<String, String> testdata) throws Exception {
+    public void completeUserCreation(List<Map<String, String>> testdatalist) throws Exception {
         Thread.sleep(5000);
-        enterText(waitUtils.waitForElementToBeClickable(eleCompanyID, driver), testdata.get("companyid"));
-        enterText(waitUtils.waitForElementToBeClickable(eleEmailAddress, driver), testdata.get("emailaddress"));
-        enterText(waitUtils.waitForElementToBeClickable(eleFirstName, driver), testdata.get("firstname"));
-        enterText(waitUtils.waitForElementToBeClickable(eleLastName, driver), testdata.get("lastname"));
-        enterText(waitUtils.waitForElementToBeClickable(eleEnterPassword, driver), testdata.get("enterpassword"));
-        enterText(waitUtils.waitForElementToBeClickable(eleReEnterPassword, driver), testdata.get("reenterpassword"));
-        clickElement(waitUtils.waitForElementToBeClickable(eleCreateAccount, driver));
+        for (Map<String, String> testdata: testdatalist) {
+            enterText(waitUtils.waitForElementToBeClickable(eleCompanyID, driver), testdata.get("companyid"));
+            enterText(waitUtils.waitForElementToBeClickable(eleEmailAddress, driver), testdata.get("emailaddress"));
+            enterText(waitUtils.waitForElementToBeClickable(eleFirstName, driver), testdata.get("firstname"));
+            enterText(waitUtils.waitForElementToBeClickable(eleLastName, driver), testdata.get("lastname"));
+            enterText(waitUtils.waitForElementToBeClickable(eleEnterPassword, driver), testdata.get("enterpassword"));
+            enterText(waitUtils.waitForElementToBeClickable(eleReEnterPassword, driver), testdata.get("reenterpassword"));
+            clickElement(waitUtils.waitForElementToBeClickable(eleCreateAccount, driver));
+        }
     }
 
     public boolean accountCreationTextDisplayed() {

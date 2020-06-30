@@ -6,7 +6,10 @@ import org.aclframework.drivers.IOSDriverBuilder;
 import org.aclframework.drivers.WebDriverBuilder;
 import org.aclframework.enums.PlatformName;
 import org.aclframework.enums.PlatformType;
+import org.aclframework.utils.DBUtil;
+
 import org.openqa.selenium.WebDriver;
+
 import org.testng.annotations.*;
 
 import java.io.IOException;
@@ -15,6 +18,7 @@ import static org.aclframework.logger.LoggingManager.logMessage;
 
 public class BaseTest {
     public WebDriver driver;
+    public DBUtil dbUtil = new DBUtil();
 
     @Parameters({"platformType", "platformName"})
     @BeforeTest
@@ -28,6 +32,11 @@ public class BaseTest {
         }
     }
 
+    @BeforeTest
+    protected void setUpDBConnection() throws Exception {
+        dbUtil.connect("qatestdata", "qatestdata");
+    }
+
     @Parameters({"platformType", "platformName"})
     @AfterTest
     public void stopAppiumServer(String platformType, @Optional String platformName) throws IOException {
@@ -37,6 +46,11 @@ public class BaseTest {
                 logMessage("Appium server has been stopped");
             }
         }
+    }
+
+    @AfterTest
+    protected void tearDownDBConnection() throws Exception {
+        dbUtil.disConnect();
     }
 
     @Parameters({"platformType", "platformName", "model"})
@@ -69,7 +83,7 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void teardownDriver() {
+    public void teardownDriver() throws Exception {
         driver.quit();
         logMessage("Driver has been quit from execution");
     }

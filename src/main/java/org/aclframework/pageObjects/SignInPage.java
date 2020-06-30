@@ -9,6 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+import java.util.Map;
+
 import static org.aclframework.logger.LoggingManager.logMessage;
 
 public class SignInPage extends Page {
@@ -51,10 +54,11 @@ public class SignInPage extends Page {
         return new SignInPage(driver).getTitle();
     }
 
-    public void signIn(String username, String password) throws Exception{
-        enterText(eleUserName, username);
-        enterText(elePassword, password);
-        clickElement(eleLogInBtn);
+    public void signIn(List<Map<String, String>> testdatalist) throws Exception{
+        for (Map<String, String> testdata: testdatalist) {
+            enterText(eleUserName, testdata.get("emailaddress"));
+            enterText(elePassword, testdata.get("enterpassword"));
+            clickElement(eleLogInBtn);
+        }
     }
-
 }

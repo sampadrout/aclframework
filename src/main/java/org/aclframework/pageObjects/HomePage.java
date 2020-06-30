@@ -15,10 +15,15 @@ public class HomePage extends Page {
 
     WebDriver driver;
 
-    @FindBy(xpath = "//a[@id='ssoButton']")
-    @AndroidFindBy()
-    @iOSFindBy()
+    @FindBy(xpath = "//a[@title='Log In'][1]")
+    @AndroidFindBy(id = "login_button")
+    @iOSFindBy(xpath = "//XCUIElementTypeButton[contains(@label, 'Log In')]")
     private WebElement eleSignInBtn;
+
+    @FindBy(xpath = "//a[@title='Get Started']")
+    @AndroidFindBy(id = "create_site_button")
+    @iOSFindBy(id = "Sign up for WordPress.com Button")
+    private WebElement eleSignUpBtn;
 
     public HomePage(WebDriver driver) throws InterruptedException {
         this.driver = driver;
@@ -28,9 +33,17 @@ public class HomePage extends Page {
         Thread.sleep(1000);
     }
 
-    public HomePage chooseSignInOption() throws Exception {
+    public SignInPage chooseSignInOption() throws Exception {
         clickElement(eleSignInBtn);
-        return new HomePage(driver);
+        new SignInPage(driver).clickOnSignInTitle();
+        logMessage("Chosen signIn option");
+        return new SignInPage(driver);
+    }
+
+    public SignUpPage chooseSignUpOption() throws Exception {
+        clickElement(eleSignUpBtn);
+        logMessage("Chosen signUp option");
+        return new SignUpPage(driver);
     }
 
 }

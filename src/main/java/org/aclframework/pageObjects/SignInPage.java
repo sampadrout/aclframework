@@ -13,25 +13,15 @@ import static org.aclframework.logger.LoggingManager.logMessage;
 
 public class SignInPage extends Page {
 
-    @FindBy(xpath = "//div[contains(text(), 'Cinch Home Services - Agent')]")
-    @AndroidFindBy(tagName = "Cinch Service Pro")
-    @iOSFindBy()
+    @FindBy(xpath = "//div[@class='login__form-header']")
+    @AndroidFindBy(id = "label")
+    @iOSFindBy(id = "Log in to WordPress.com using an email address to manage all your WordPress sites.")
+    private WebElement elePageTitle;
+
+    @FindBy(xpath = "//div[contains(text(), 'Log in to')]")
+    @AndroidFindBy(id = "label")
+    @iOSFindBy(xpath = "//XCUIElementTypeStaticText[contains(@label, 'Log in to WordPress.com using an email address to manage all your WordPress sites.')]")
     private WebElement eleSignInTitle;
-
-    @FindBy(xpath = "//input[@placeholder='username/email']")
-    @AndroidFindBy(tagName = "Username")
-    @iOSFindBy()
-    private WebElement eleUserName;
-
-    @FindBy(xpath = "//input[@placeholder='your password']")
-    @AndroidFindBy(tagName = "Password")
-    @iOSFindBy()
-    private WebElement elePassword;
-
-    @FindBy(xpath = "//span[@class='auth0-label-submit']")
-    @AndroidFindBy(tagName = "Login")
-    @iOSFindBy()
-    private WebElement eleLogInBtn;
 
     WebDriver driver;
 
@@ -44,17 +34,10 @@ public class SignInPage extends Page {
     }
 
     public String getTitle() throws Exception {
-        return getText(eleSignInTitle);
+        return getText(elePageTitle);
     }
 
-    public String verifySigninPageTitle() throws Exception {
-        return new SignInPage(driver).getTitle();
+    public void clickOnSignInTitle() throws Exception {
+        clickElement(eleSignInTitle);
     }
-
-    public void signIn(String username, String password) throws Exception{
-        enterText(eleUserName, username);
-        enterText(elePassword, password);
-        clickElement(eleLogInBtn);
-    }
-
 }

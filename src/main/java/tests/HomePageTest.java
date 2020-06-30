@@ -1,8 +1,8 @@
 package tests;
 
 import org.aclframework.allureReport.TestListener;
+import org.aclframework.imageCompare.ImageComparator;
 import org.aclframework.pageObjects.HomePage;
-import org.aclframework.pageObjects.SignInPage;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -12,13 +12,20 @@ public class HomePageTest extends BaseTest {
 
     SoftAssert softAssert = new SoftAssert();
 
-    @Test(description = "testing the agent home page")
+    @Test(description = "testing the signin page visually")
     public void testSignInOption() throws Exception {
         HomePage homePage = new HomePage(driver);
-        SignInPage signInPage = new SignInPage(driver);
-
+        softAssert.assertTrue(new ImageComparator(driver).compare("homePage"), "homePage baseline image isn't matching with actual image.");
         homePage.chooseSignInOption();
-        softAssert.assertTrue(signInPage.verifySigninPageTitle().equals("Cinch Home Services - Agent"), "agent sign screen not displayed");
+        softAssert.assertTrue(new ImageComparator(driver).compare("signinPage"), "signinPage baseline image isn't matching with actual image.");
+        softAssert.assertAll();
+    }
+
+    @Test(description = "testing the signup page visually")
+    public void testSignUpOption() throws Exception {
+        HomePage homePage = new HomePage(driver);
+        homePage.chooseSignUpOption();
+        softAssert.assertTrue(new ImageComparator(driver).compare("signupPage"), "signupPage baseline image isn't matching with actual image.");
         softAssert.assertAll();
     }
 

@@ -5,9 +5,9 @@
     "platformName": "Android",
     "platformVersion": "9",
     "automationName": "UIAutomator2",
-    "packageName": "com.cinch.cinchpro",
-    "activity": "com.mendix.nativetemplate.MainActivity",
+    "packageName": "org.wordpress.android",
+    "activity": "org.wordpress.android.ui.WPLaunchActivity",
     "reset": true,
-    "app": "app-appstore-debug.apk"
+    "app": "WordPress.apk"
   }
 ]

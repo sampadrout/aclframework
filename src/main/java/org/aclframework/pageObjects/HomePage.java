@@ -2,8 +2,11 @@ package org.aclframework.pageObjects;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.pagefactory.iOSFindBy;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
+
 import org.aclframework.helpers.Page;
+import org.aclframework.utils.WaitUtils;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,15 +17,16 @@ import static org.aclframework.logger.LoggingManager.logMessage;
 public class HomePage extends Page {
 
     WebDriver driver;
+    WaitUtils waitUtils = new WaitUtils();
 
     @FindBy(xpath = "//a[@title='Log In'][1]")
     @AndroidFindBy(id = "login_button")
-    @iOSFindBy(xpath = "//XCUIElementTypeButton[contains(@label, 'Log In')]")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeButton[contains(@label, 'Log In')]")
     private WebElement eleSignInBtn;
 
     @FindBy(xpath = "//a[@title='Get Started']")
     @AndroidFindBy(id = "create_site_button")
-    @iOSFindBy(id = "Sign up for WordPress.com Button")
+    @iOSXCUITFindBy(id = "Sign up for WordPress.com Button")
     private WebElement eleSignUpBtn;
 
     public HomePage(WebDriver driver) throws InterruptedException {
@@ -34,14 +38,16 @@ public class HomePage extends Page {
     }
 
     public SignInPage chooseSignInOption() throws Exception {
-        clickElement(eleSignInBtn);
+        clickElement(waitUtils.waitForElementToBeClickable(eleSignInBtn, driver));
+//      clickElement(eleSignInBtn);
         new SignInPage(driver).clickOnSignInTitle();
         logMessage("Chosen signIn option");
         return new SignInPage(driver);
     }
 
     public SignUpPage chooseSignUpOption() throws Exception {
-        clickElement(eleSignUpBtn);
+        clickElement(waitUtils.waitForElementToBeClickable(eleSignUpBtn, driver));
+//      clickElement(eleSignUpBtn);
         logMessage("Chosen signUp option");
         return new SignUpPage(driver);
     }

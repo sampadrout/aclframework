@@ -1,5 +1,15 @@
 [
   {
+    "name": "iPhone_11",
+    "deviceName": "iPhone_11",
+    "platformName": "iOS",
+    "platformVersion": "13.3",
+    "automationName": "XCuiTest",
+    "udid": "476B00CD-7B42-4BE7-9582-384A4295DE57",
+    "reset": true,
+    "app": "WordPress.zip"
+  },
+  {
     "name": "iphone6s",
     "deviceName": "iPhone 6s",
     "platformName": "iOS",

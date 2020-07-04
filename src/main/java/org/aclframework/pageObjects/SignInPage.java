@@ -2,7 +2,7 @@ package org.aclframework.pageObjects;
 
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.appium.java_client.pagefactory.iOSFindBy;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import org.aclframework.helpers.Page;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,12 +15,12 @@ public class SignInPage extends Page {
 
     @FindBy(xpath = "//div[@class='login__form-header']")
     @AndroidFindBy(id = "label")
-    @iOSFindBy(id = "Log in to WordPress.com using an email address to manage all your WordPress sites.")
+    @iOSXCUITFindBy(id = "Log in to WordPress.com using an email address to manage all your WordPress sites.")
     private WebElement elePageTitle;
 
     @FindBy(xpath = "//div[contains(text(), 'Log in to')]")
     @AndroidFindBy(id = "label")
-    @iOSFindBy(xpath = "//XCUIElementTypeStaticText[contains(@label, 'Log in to WordPress.com using an email address to manage all your WordPress sites.')]")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[contains(@label, 'Log in to WordPress.com using an email address to manage all your WordPress sites.')]")
     private WebElement eleSignInTitle;
 
     WebDriver driver;

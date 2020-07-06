@@ -3,7 +3,7 @@ apply plugin: 'application'
 
 mainClassName = 'org.aclframework.runner.TestRunner'
 
-group 'OneFramework'
+group 'ACLFramework'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'

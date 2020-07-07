@@ -30,7 +30,7 @@ public class Coverage extends Page {
     @iOSXCUITFindBy()
     private WebElement inputSearch;
 
-    @FindBy(xpath = "//div[contains(text(), 'California')]")
+    @FindBy(xpath = "//div[contains(text(), 'New York')]")
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement searchedState;
@@ -45,7 +45,7 @@ public class Coverage extends Page {
     @iOSXCUITFindBy()
     private WebElement dropDownCounty;
 
-    @FindBy(xpath = "//div[contains(text(), 'LOS ANGELES, California')]")
+    @FindBy(xpath = "//div[contains(text(), 'NEW YORK, New York')]")
     @AndroidFindBy()
     @iOSXCUITFindBy()
     private WebElement searchedCounty;
@@ -106,7 +106,7 @@ public class Coverage extends Page {
         Thread.sleep(2000);
         clickElement(inputSearch);
         Thread.sleep(2000);
-        enterText(inputSearch, "California");
+        enterText(inputSearch, "New York");
         Thread.sleep(2000);
         clickElement(searchedState);
         Thread.sleep(2000);
@@ -118,7 +118,7 @@ public class Coverage extends Page {
         Thread.sleep(2000);
         clickElement(inputSearch);
         Thread.sleep(2000);
-        enterText(inputSearch, "Los Angeles");
+        enterText(inputSearch, "New York");
         Thread.sleep(2000);
         clickElement(searchedCounty);
         Thread.sleep(2000);

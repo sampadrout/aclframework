@@ -70,18 +70,19 @@ public class LaborRates extends Page {
 
     public void enterLaborRatesDetails() throws InterruptedException {
         Thread.sleep(5000);
-        enterText(selectLaborTypeRepair, "Flat Rate");
+        enterText(selectLaborTypeRepair, "Flat Rate"+Keys.TAB);
         Thread.sleep(10000);
-        enterText(enterLaborRateRepair, "150.00", "ENTER");
+        enterText(enterLaborRateRepair, Keys.chord("150.00"));
+        enterText(enterLaborRateRepair, Keys.chord(Keys.ENTER));
         Thread.sleep(10000);
-        enterText(selectLaborTypeInstallation, "Flat Rate");
+        enterText(selectLaborTypeInstallation, "Flat Rate"+Keys.TAB);
         Thread.sleep(10000);
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-        jse.executeScript("arguments[0].value='100.00';", enterLaborRateInstallation);
-        enterLaborRateInstallation.sendKeys(Keys.TAB);
-//        enterText(enterLaborRateInstallation, "100", "ENTER");
+        enterText(enterLaborRateInstallation, Keys.chord("100.00"));
+        enterText(enterLaborRateInstallation, Keys.chord(Keys.ENTER));
+        enterText(enterLaborRateInstallation, Keys.chord(Keys.TAB));
         Thread.sleep(10000);
-        enterText(enterDiagnosticFee, "158", "ENTER");
+        enterText(enterDiagnosticFee, Keys.chord("158.00"));
+        enterText(enterDiagnosticFee, Keys.chord(Keys.ENTER));
         Thread.sleep(15000);
         clickElement(eleSaveAndContinueBtn);
         Thread.sleep(10000);
